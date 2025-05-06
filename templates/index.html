@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SuelmaParis Devop</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/another-file.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/responsive.css') }}">     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -69,7 +70,7 @@
       <!-- START THE CONTENT FOR THE VIDEO -->
       <div class="col-md-6 intros text-end">
         <div class="video-box">
-          <img src="images/arts/intro-section-illustration.png" alt="video illutration" class="img-fluid">
+          <img src="{{ url_for('static', filename='assets/images/arts/intro-section-illustration.png') }}" alt="video illutration" class="img-fluid">
           <a href="#" class="glightbox position-absolute top-50 start-50 translate-middle">
             <span>
               <i class="fas fa-play-circle"></i>
@@ -84,7 +85,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 
-<
+
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////
                          START SECTION 4 - THE SERVICES  
 ///////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -122,7 +123,7 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
         <div class="services__pic">
-          <img src="images/services/service-1.png" alt="marketing illustration" class="img-fluid">
+          <img src="{{ url_for('static', filename='assets/images/services/service-1.png') }}" alt="marketing illustration" class="img-fluid">
         </div>
       </div>
     </div>
@@ -130,13 +131,13 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start">
         <div class="services__pic">
-          <img src="images/services/service-2.png" alt="web development illustration" class="img-fluid">
+          <img src="{{ url_for('static', filename='assets/images/services/service-2.png') }}" alt="web development illustration" class="img-fluid">
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
         <div class="services__content">
           <div class="icon d-block fas fa-code"></div>
-          <h3 class="display-3--title mt-1">App development</h3>
+          <h3 class="display-3--title mt-1">Web Site Development</h3>
           <p class="lh-lg">
             I'm responsible for designing and coding functional software programs and applications. 
             I collaborate with costumers to set specifications,
@@ -166,7 +167,7 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
         <div class="services__pic">
-          <img src="images/services/service-3.png" alt="cloud hosting illustration" class="img-fluid">
+          <img src="{{ url_for('static', filename='assets/images/services/service-3.png') }}" alt="cloud hosting illustration" class="img-fluid">
         </div>
       </div>
     </div>
@@ -208,7 +209,7 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/client-1.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
+              <img src="{{ url_for('static', filename='assets/images/testimonials/client-1.jpg') }}" alt="client-1 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
@@ -235,7 +236,7 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/client-2.jpg" alt="client-2 picture" class="rounded-circle img-fluid">
+              <img src="{{ url_for('static', filename='assets/images/testimonials/client-2.jpg') }}" alt="client-2 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
@@ -262,7 +263,7 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/client-3.jpg" alt="client-3 picture" class="rounded-circle img-fluid">
+              <img src="{{ url_for('static', filename='assets/images/testimonials/client-3.jpg') }}" alt="client-3 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
@@ -289,7 +290,7 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/client-4.jpg" alt="client-4 picture" class="rounded-circle img-fluid">
+              <img src="{{ url_for('static', filename='assets/images/testimonials/client-4.jpg') }}" alt="client-4 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
@@ -409,7 +410,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-6">
         <div class="portfolio-box shadow">
-          <img src="images/portfolio/portfolio-1.png" alt="portfolio 1 image" title="portfolio 1 picture" class="img-fluid">
+          <img src="{{ url_for('static', filename='assets/images/portfolio/portfolio-1.png') }}" alt="portfolio 1 image" title="portfolio 1 picture" class="img-fluid">
           <div class="portfolio-info">
             <div class="caption">
               <h4>My Portfolio</h4>
@@ -420,7 +421,7 @@
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="portfolio-box shadow">
-          <img src="images/portfolio/portfolio-2.png" alt="portfolio 2 image" title="portfolio 2 picture" class="img-fluid">
+          <img src="{{ url_for('static', filename='assets/images/portfolio/portfolio-2.png') }}" alt="portfolio 2 image" title="portfolio 2 picture" class="img-fluid">
           <div class="portfolio-info">
             <div class="caption">
               <h4>Fidos Retreat  Doggie Daycare</h4>
@@ -431,7 +432,7 @@
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="portfolio-box shadow">
-          <img src="images/portfolio/portfolio-3.png" alt="portfolio 3 image" title="portfolio 3 picture" class="img-fluid">
+          <img src="{{ url_for('static', filename='assets/images/portfolio/portfolio-3.png') }}" alt="portfolio 3 image" title="portfolio 3 picture" class="img-fluid">
           <div class="portfolio-info">
             <div class="caption">
               <h4>Yullia Store Ecommerce</h4>
@@ -453,55 +454,69 @@
     <div class="row text-center">
       <h1 class="display-3 fw-bold text-capitalize">Get started</h1>
       <div class="heading-line"></div>
-      <p class="lh-lg">
-      
-      </p>
+      <p class="lh-lg"></p>
     </div>
 
-    <!-- START THE CTA CONTENT  -->
+    <!-- START THE CTA CONTENT -->
     <div class="row text-white">
       <div class="col-12 col-lg-6 gradient shadow p-3">
         <div class="cta-info w-100">
           <h4 class="display-4 fw-bold">100% Satisfaction Guaranteed</h4>
-          <p class="lh-lg">
-           
-          </p>
+          <p class="lh-lg"></p>
           <h3 class="display-3--brief">What will be the next step?</h3>
           <ul class="cta-info__list">
             <li>We'll prepare the proposal.</li>
-            <li>we'll discuss it together.</li>
-            <li>let's start the discussion.</li>
+            <li>We'll discuss it together.</li>
+            <li>Let's start the discussion.</li>
           </ul>
         </div>
       </div>
-      <div class="col-12 col-lg-6 bg-white shadow p-3">
-        <div class="form w-100 pb-2">
-          <h4 class="display-3--title mb-5">start your project</h4>
-          <form action="#" class="row">
+
+      <div class="col-12 col-lg-6 bg-white text-dark shadow p-3">
+        <h4 class="display-6 mb-4 text-center text-primary">Start Your Project</h4>
+    
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="list-unstyled">
+                    {% for category, message in messages %}
+                        <li class="text-{{ 'success' if category == 'success' else 'danger' }}">
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    
+        <form action="/send_email" method="POST" class="row">
             <div class="col-lg-6 col-md mb-3">
-              <input type="text" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg">
+                <input type="text" name="first_name" placeholder="First Name" id="inputFirstName"
+                       class="shadow form-control form-control-lg" required>
             </div>
             <div class="col-lg-6 col-md mb-3">
-              <input type="text" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg">
+                <input type="text" name="last_name" placeholder="Last Name" id="inputLastName"
+                       class="shadow form-control form-control-lg" required>
             </div>
             <div class="col-lg-12 mb-3">
-              <input type="email" placeholder="email address" id="inputEmail" class="shadow form-control form-control-lg">
+                <input type="email" name="email" placeholder="Email Address" id="inputEmail"
+                       class="shadow form-control form-control-lg" required>
             </div>
             <div class="col-lg-12 mb-3">
-              <textarea name="message" placeholder="message" id="message" rows="8" class="shadow form-control form-control-lg"></textarea>
+                <textarea name="message" placeholder="Message" id="message" rows="6"
+                          class="shadow form-control form-control-lg" required></textarea>
             </div>
-            <div class="text-center d-grid mt-1">
-              <button type="button" class="btn btn-primary rounded-pill pt-3 pb-3">
-                submit
-                <i class="fas fa-paper-plane"></i>
-              </button>
+            <div class="text-center d-grid mt-2">
+                <button type="submit" class="btn btn-primary rounded-pill pt-3 pb-3">
+                    Submit
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </div>
-          </form>
-        </div>
-      </div>
+        </form>
+    </div>
+    
     </div>
   </div>
 </section>
+
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////
                            START SECTION 9 - THE FOOTER  
@@ -536,7 +551,7 @@
           </svg>
         </div>
         <div class="contact-box__info">
-          <a href="#" class="contact-box__info--title">info@suelmaparisdevop.com</a>
+          <a href="#" class="contact-box__info--title">suelmacruz22@gmail.com</a>
           <p class="contact-box__info--subtitle">Online support</p>
         </div>
       </div>
@@ -601,7 +616,7 @@
 
 
    
-    <script src="assets/vendors/js/glightbox.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/vendors/js/glightbox.min.js') }}"></script>
 
     <script type="text/javascript">
       const lightbox = GLightbox({
@@ -614,6 +629,6 @@
 });
     
     </script>
-     <script src="assets/js/bootstrap.bundle.min.js"></script>
+     <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

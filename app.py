@@ -1,57 +1,44 @@
 import os
-
-from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_mail import Mail, Message
-from dotenv import load_dotenv
-
-
-# Carregar variáveis do .env
-load_dotenv()
+from flask import Flask, render_template, request, flash, redirect, url_for
+import smtplib
+from email.mime.text import MIMEText
 
 app = Flask(__name__)
+app.secret_key = 'um_valor_secreto_aqui'
 
-# Configurações do Flask-Mail com variáveis do .env
-app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
-app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT'))
-app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS') == 'True'
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
-app.secret_key = os.getenv('SECRET_KEY')
+@app.route('/send_email', methods=['GET', 'POST'])
+def send_email():
+    if request.method == 'POST':
+        first_name = request.form.get('first_name', '')
+        last_name = request.form.get('last_name', '')
+        email = request.form.get('email', '')
+        message = request.form.get('message', '')
 
-mail = Mail(app)
+        if not (first_name and last_name and email and message):
+            flash('Todos os campos são obrigatórios.')
+            return redirect(url_for('index'))
 
+        try:
+            msg = MIMEText(f"Mensagem de {first_name} {last_name} <{email}>:\n\n{message}")
+            msg['Subject'] = 'Novo formulário recebido'
+            msg['From'] = 'seuemail@dominio.com'
+            msg['To'] = 'suelmacruz22@gmail.com'
+
+            with smtplib.SMTP('smtp.gmail.com', 587) as server:
+                server.starttls()
+                server.login('suelmacruz22@gmail.com', 'bhlvaxeixzgowitx')
+                server.send_message(msg)
+
+            flash('Email enviado com sucesso!')
+        except Exception as e:
+            print(e)
+            flash('Erro ao enviar o email.')
+
+        return redirect(url_for('index'))
+    else:
+        # Se acessarem /send_email por GET, redireciona para a home
+        return redirect(url_for('index'))
+    
 @app.route('/')
 def index():
     return render_template('index.html')
-
-@app.route('/send_email', methods=['POST'])
-def send_email():
-    name = request.form['name']
-    email = request.form['email']
-    message = request.form['message']
-
-    msg = Message('Novo contato do portfólio',
-                  sender=email,
-                  recipients=[os.getenv('MAIL_USERNAME')])
-    msg.body = f"Nome: {name}\nEmail: {email}\nMensagem: {message}"
-
-    try:
-        mail.send(msg)
-        flash('Mensagem enviada com sucesso!', 'success')
-    except Exception as e:
-        flash(f'Erro ao enviar mensagem: {str(e)}', 'danger')
-
-    return redirect(url_for('index'))
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
-load_dotenv()
-
-app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
-app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT'))
-app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS') == 'True'
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
-app.secret_key = os.getenv('SECRET_KEY')

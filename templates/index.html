@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/another-file.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/responsive.css') }}">     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
@@ -29,8 +30,8 @@
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">faq</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">contact</a>
           </li>
         </ul>
@@ -55,13 +56,13 @@
       <div class="col-md-6 intros text-start">
         <h1 class="display-2">
           <span class="display-2--intro">Hey!, I'm Suelma Paris</span>
-          <span class="display-2--description lh-base">
+          <span class="display-2--description lh-base" style="text-align: justify;">
             I'm a Data Analyst and Web Developer with a background in Management Informatics. 
             I specialize in Python, SQL, Django, Flask, and front-end technologies like HTML, CSS, JavaScript, 
             and Bootstrap. My experience includes developing web applications, automating reports, and creating 
             interactive dashboards to help businesses make data-driven decisions. Passionate about solving problems 
             through technology, I’m always looking for new challenges and opportunities to grow.
-          </span>
+          </span>          
         </h1>
         <button type="button" class="rounded-pill btn-rounded">Get in Touch
           <span><i class="fas fa-arrow-right"></i></span>
@@ -112,7 +113,7 @@
         <div class="services__content">
           <div class="icon d-block fas fa-paper-plane"></div>
           <h3 class="display-3--title mt-1">Social Media Management</h3>
-          <p class="lh-lg">
+          <p class="lh-lg" style="text-align: justify;">
             I'm responsible for developing strategies to increase followers, creating and overseeing social campaigns, producing content, 
             reviewing analytics, and communicating with key stakeholders for your company. 
           </p>
@@ -138,7 +139,7 @@
         <div class="services__content">
           <div class="icon d-block fas fa-code"></div>
           <h3 class="display-3--title mt-1">Web Site Development</h3>
-          <p class="lh-lg">
+          <p class="lh-lg" style="text-align: justify;">
             I'm responsible for designing and coding functional software programs and applications. 
             I collaborate with costumers to set specifications,
              write high-quality code, conduct testing, and troubleshoot applications.
@@ -155,7 +156,7 @@
         <div class="services__content">
           <div class="icon d-block fas fa-cloud-upload-alt"></div>
           <h3 class="display-3--title mt-1">Business Data Analyst/SEO</h3>
-          <p class="lh-lg">
+          <p class="lh-lg" style="text-align: justify;">
             SEO analysts help an organisation to increase the number of people viewing its website(s) 
             by analysing data on website performance and staying on top of ever-changing SEO trends.
             SEO analysts can work either as part of an organisation's marketing team or for an independent SEO agency on behalf of clients.
@@ -177,139 +178,85 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////
                                START SECTION 5 - THE TESTIMONIALS  
 /////////////////////////////////////////////////////////////////////////////////////////////////////-->
-<section id="testimonials" class="testimonials">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
-  <div class="container">
-    <div class="row text-center text-white">
-      <h1 class="display-3 fw-bold">Testimonials</h1>
-      <hr style="width: 100px; height: 3px; " class="mx-auto">
-      <p class="lead pt-1">what my clients are saying</p>
-    </div>
 
-    <!-- START THE CAROUSEL CONTENT  -->
-    <div class="row align-items-center">
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <!-- CAROUSEL ITEM 1 -->
-          <div class="carousel-item active">
-            <!-- testimonials card  -->
-            <div class="testimonials__card">
-              <p class="lh-lg">
-                <i class="fas fa-quote-left"></i>
-                Excelent service...
-                <i class="fas fa-quote-right"></i>
-                <div class="ratings p-1">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+<section id="testimonials" class="py-5 gradient text-white"">
+  <!-- SVG Wave no início com cor branca -->
+ 
+  <div class="container">
+    <!-- Section Header -->
+   
+    <div class="row text-center mb-4">
+      <h1 class="display-4 fw-bold ">Testimonials</h1>
+      <div class="heading-line mx-auto mb-3" style="width: 100px; height: 4px; background-color: #0d6efd;"></div>
+     
+    </div>
+    </div>
+    <div class="row g-4">
+      <!-- Testimonial Form -->
+      <div class="col-12 col-lg-6 text-indigo shadow rounded ">
+        <h4 class="mb-4 text-center ">Leave Your Testimony</h4>
+        <form action="/add_testimonial" method="POST" enctype="multipart/form-data" class="row g-3">
+          <div class="col-md-6">
+            <input type="text" name="name" placeholder="Full Name" class="form-control form-control-lg shadow-sm" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" name="role" placeholder="Your Role (e.g., Client, Partner)" class="form-control form-control-lg shadow-sm" required>
+          </div>
+          <div class="col-12">
+            <textarea name="message" placeholder="Your Testimonial" rows="5" class="form-control form-control-lg shadow-sm" required></textarea>
+          </div>
+          <div class="col-12">
+            <input type="file" name="photo" accept="image/*" class="form-control form-control-lg shadow-sm">
+            <small class="form-text text-white">Optional: Upload your photo (JPG, PNG)</small>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-indigo text-white rounded-pill px-5 py-3">
+              Submit Testimonial <i class="fas fa-paper-plane ms-2"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Testimonial Carousel -->
+      <div class="col-12 col-lg-6 text-white shadow rounded p-4 gradient">
+        <h4 class="mb-4 text-center">Client Feedback</h4>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            {% for testimonial in testimonials %}
+            <div class="carousel-item {% if loop.first %}active{% endif %}">
+              <div class="text-center">
+                <div class="mb-3">
+                  <i class="fas fa-quote-left fa-2x text-light"></i>
                 </div>
-              </p>
-            </div>
-            <!-- client picture  -->
-            <div class="testimonials__picture">
-              <img src="{{ url_for('static', filename='assets/images/testimonials/client-1.jpg') }}" alt="client-1 picture" class="rounded-circle img-fluid">
-            </div>
-            <!-- client name & role  -->
-            <div class="testimonials__name">
-              <h3>Suelma</h3>
-              <p class="fw-light">CEO & founder</p>
-            </div>
-          </div>     
-          <!-- CAROUSEL ITEM 2 -->
-          <div class="carousel-item">
-            <!-- testimonials card  -->
-            <div class="testimonials__card">
-              <p class="lh-lg">
-                <i class="fas fa-quote-left"></i>
-                Excelent service
-                <i class="fas fa-quote-right"></i>
-                <div class="ratings p-1">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                <p class="lh-lg">{{ testimonial.message }}</p>
+                <div class="ratings mb-3">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
                 </div>
-              </p>
-            </div>
-            <!-- client picture  -->
-            <div class="testimonials__picture">
-              <img src="{{ url_for('static', filename='assets/images/testimonials/client-2.jpg') }}" alt="client-2 picture" class="rounded-circle img-fluid">
-            </div>
-            <!-- client name & role  -->
-            <div class="testimonials__name">
-              <h3>suelma</h3>
-              <p class="fw-light">Ceo- founder</p>
-            </div>
-          </div>     
-          <!-- CAROUSEL ITEM 3 -->
-          <div class="carousel-item">
-            <!-- testimonials card  -->
-            <div class="testimonials__card">
-              <p class="lh-lg">
-                <i class="fas fa-quote-left"></i>
-                Excelent service
-                <i class="fas fa-quote-right"></i>
-                <div class="ratings p-1">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                <div class="mb-3">
+                  <img src="{{ url_for('static', filename='uploads/' ~ testimonial.image_filename) }}" alt="{{ testimonial.name }} picture" class="rounded-circle img-fluid" style="width: 80px; height: 80px;">
                 </div>
-              </p>
+                <h5 class="fw-bold">{{ testimonial.name }}</h5>
+                <p class="fw-light">{{ testimonial.role }}</p>
+              </div>
             </div>
-            <!-- client picture  -->
-            <div class="testimonials__picture">
-              <img src="{{ url_for('static', filename='assets/images/testimonials/client-3.jpg') }}" alt="client-3 picture" class="rounded-circle img-fluid">
-            </div>
-            <!-- client name & role  -->
-            <div class="testimonials__name">
-              <h3>ClaireBelle Zawadi</h3>
-              <p class="fw-light">Global brand manager</p>
-            </div>
-          </div>     
-          <!-- CAROUSEL ITEM 4 -->
-          <div class="carousel-item">
-            <!-- testimonials card  -->
-            <div class="testimonials__card">
-              <p class="lh-lg">
-                <i class="fas fa-quote-left"></i>
-                Excelent service
-                <i class="fas fa-quote-right"></i>
-                <div class="ratings p-1">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-              </p>
-            </div>
-            <!-- client picture  -->
-            <div class="testimonials__picture">
-              <img src="{{ url_for('static', filename='assets/images/testimonials/client-4.jpg') }}" alt="client-4 picture" class="rounded-circle img-fluid">
-            </div>
-            <!-- client name & role  -->
-            <div class="testimonials__name">
-              <h3>Uhuru Kenyatta</h3>
-              <p class="fw-light">C.E.O & Founder</p>
-            </div>
-          </div>     
-        </div>
-        <div class="text-center">
-          <button class="btn btn-outline-light fas fa-long-arrow-alt-left" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        </button>
-        <button class="btn btn-outline-light fas fa-long-arrow-alt-right" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        </button>
+            {% endfor %}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
         </div>
       </div>
     </div>
-  </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  </div> 
 </section>
+
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////
                        START SECTION 6 - THE FAQ 

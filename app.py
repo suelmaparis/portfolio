@@ -14,6 +14,10 @@ from models import db, Testimonial
 photos = UploadSet('photos', IMAGES)
 app = Flask(__name__)
 
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+
 app.secret_key = 'um_valor_secreto_aqui'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOADED_PHOTOS_DEST'] = 'static/uploads' 

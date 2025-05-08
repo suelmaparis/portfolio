@@ -5,6 +5,10 @@ from flask import Flask, render_template, request, flash, redirect, url_for
 from email.mime.text import MIMEText
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 
+from werkzeug.utils import secure_filename
+from werkzeug.datastructures import FileStorage
+
+
 from models import db, Testimonial
 
 photos = UploadSet('photos', IMAGES)

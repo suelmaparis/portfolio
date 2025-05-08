@@ -61,15 +61,39 @@ def index():
     testimonials = Testimonial.query.all()
     return render_template('index.html', testimonials=testimonials)
 
+import os
+from werkzeug.utils import secure_filename
+
 @app.route('/add_testimonial', methods=['POST'])
 def add_testimonial():
     name = request.form['name']
     role = request.form['role']
     message = request.form['message']
-    # Para simplicidade, usamos uma imagem default
-    testimonial = Testimonial(name=name, role=role, message=message)
+
+    # Configurar pasta de upload completa
+    upload_folder = os.path.join('static', 'assets', 'images', 'uploads')
+    os.makedirs(upload_folder, exist_ok=True)
+
+    # Verificar se tem arquivo
+    photo = request.files.get('photo')
+    if photo and photo.filename != '':
+        filename = secure_filename(photo.filename)
+        photo.save(os.path.join(upload_folder, filename))
+    else:
+        # Se não enviar foto, usar imagem padrão
+        filename = 'default.jpg'  # essa imagem deve estar em static/assets/images/uploads
+
+    # Salvar no banco
+    testimonial = Testimonial(
+        name=name,
+        role=role,
+        message=message,
+        image_filename=filename
+    )
     db.session.add(testimonial)
     db.session.commit()
+
     return redirect(url_for('index'))
+
 
 

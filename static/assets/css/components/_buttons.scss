@@ -37,3 +37,43 @@
         }
     }
 }
+
+a.btn-rounded {
+    position: relative;
+    padding: 0.8375rem 4.375rem 0.8375rem 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    border: 0.1rem solid rgba(255, 255, 255, 0.6); /* Aqui usamos o rgba(255, 255, 255, 0.6) para o branco */
+    background-color: #fff; /* O branco, use a variável se preferir */
+    display: block;
+    text-decoration: none; /* Remove o sublinhado do link */
+
+    span {
+        position: absolute;
+        background-color: #0d6efd; /* A cor do botão, substitua pela variável se necessário */
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            color: #fff; /* Cor do ícone */
+            font-size: 1rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    &:hover {
+        background: linear-gradient(45deg, #6a11cb, #2575fc); /* Exemplo de gradiente, substitua pelo seu mixin de gradiente */
+        color: #fff;
+
+        span {
+            background-color: rgba(0, 0, 0, 0.6); /* Cor de fundo do círculo ao passar o mouse */
+        }
+    }
+}

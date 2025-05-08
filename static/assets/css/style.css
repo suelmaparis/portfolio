@@ -47,6 +47,9 @@
 *::after {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -307,6 +310,8 @@ th {
 label {
   display: inline-block;
 }
+
+
 
 button {
   border-radius: 0;

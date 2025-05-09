@@ -3,15 +3,10 @@ import smtplib
 
 from flask import Flask, render_template, request, flash, redirect, url_for
 from email.mime.text import MIMEText
-from flask_uploads import UploadSet, configure_uploads, IMAGES
-
 from werkzeug.utils import secure_filename
-from werkzeug.datastructures import FileStorage
-
 
 from models import db, Testimonial
 
-photos = UploadSet('photos', IMAGES)
 app = Flask(__name__)
 
 if __name__ == '__main__':
@@ -20,11 +15,7 @@ if __name__ == '__main__':
 
 app.secret_key = 'um_valor_secreto_aqui'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['UPLOADED_PHOTOS_DEST'] = 'static/uploads' 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-
-
-configure_uploads(app, photos)
 
 db.init_app(app)
 
@@ -40,7 +31,7 @@ def send_email():
         message = request.form.get('message', '')
 
         if not (first_name and last_name and email and message):
-            flash('TAll fields are required.')
+            flash('All fields are required.')
             return redirect(url_for('index'))
 
         try:
@@ -61,7 +52,6 @@ def send_email():
 
         return redirect(url_for('index'))
     else:
-        # Se acessarem /send_email por GET, redireciona para a home
         return redirect(url_for('index'))
     
 @app.route('/')
@@ -69,29 +59,22 @@ def index():
     testimonials = Testimonial.query.all()
     return render_template('index.html', testimonials=testimonials)
 
-import os
-from werkzeug.utils import secure_filename
-
 @app.route('/add_testimonial', methods=['POST'])
 def add_testimonial():
     name = request.form['name']
     role = request.form['role']
     message = request.form['message']
 
-    # Configurar pasta de upload completa
     upload_folder = os.path.join('static', 'assets', 'images', 'uploads')
     os.makedirs(upload_folder, exist_ok=True)
 
-    # Verificar se tem arquivo
     photo = request.files.get('photo')
     if photo and photo.filename != '':
         filename = secure_filename(photo.filename)
         photo.save(os.path.join(upload_folder, filename))
     else:
-        # Se não enviar foto, usar imagem padrão
-        filename = 'default.jpg'  # essa imagem deve estar em static/assets/images/uploads
+        filename = 'default.jpg'
 
-    # Salvar no banco
     testimonial = Testimonial(
         name=name,
         role=role,
@@ -102,6 +85,3 @@ def add_testimonial():
     db.session.commit()
 
     return redirect(url_for('index'))
-
-
-
